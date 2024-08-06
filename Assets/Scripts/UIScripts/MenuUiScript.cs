@@ -18,7 +18,7 @@ public class MenuUiScript : MonoBehaviour
         quitButton.onClick.AddListener(OnQuitClicked);
         muteButton.onClick.AddListener(OnMuteClicked);
     }
-    private void EnableMenu(bool status) => menuObject.SetActive(status);   
+    public void EnableMenu(bool status) => menuObject.SetActive(status);   
     private void OnQuitClicked() => Application.Quit();
     private void OnMuteClicked() => GameService.Instance.SoundService.ToggleMute();
     private void OnPlayClicked() 
