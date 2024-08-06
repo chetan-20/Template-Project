@@ -31,6 +31,6 @@ public class LevelEndScript : MonoBehaviour
     private void OnMenuClicked()
     {
         levelOverObject.SetActive(false);
-        GameService.Instance.MenuUiScript.EnableMenu(true);
+        GameService.Instance.GetMenuUiScript().EnableMenu(true);
     }
 }

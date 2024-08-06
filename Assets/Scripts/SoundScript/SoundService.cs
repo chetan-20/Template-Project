@@ -54,8 +54,8 @@ public class SoundService : MonoBehaviour
     }
     public void ToggleMute() 
     {   IsMute = !IsMute;
-        if (IsMute) {GameService.Instance.PopUpService.ShowPopupMessage("Muted"); }
-        else { GameService.Instance.PopUpService.ShowPopupMessage("Un-Muted"); }
+        if (IsMute) {GameService.Instance.GetPopUpService().ShowPopupMessage("Muted"); }
+        else { GameService.Instance.GetPopUpService().ShowPopupMessage("Un-Muted"); }
     }
 }
 [Serializable]
