@@ -18,8 +18,12 @@ public class MenuUiScript : MonoBehaviour
         quitButton.onClick.AddListener(OnQuitClicked);
         muteButton.onClick.AddListener(OnMuteClicked);
     }
-    private void EnableMenu(bool status) => menuObject.SetActive(status);
-    private void OnPlayClicked() => EnableMenu(false);
+    private void EnableMenu(bool status) => menuObject.SetActive(status);   
     private void OnQuitClicked() => Application.Quit();
-    private void OnMuteClicked() { }
+    private void OnMuteClicked() => GameService.Instance.SoundService.ToggleMute();
+    private void OnPlayClicked() 
+    { 
+        EnableMenu(false);
+        GameService.Instance.EnableLevel(true);
+    }
 }

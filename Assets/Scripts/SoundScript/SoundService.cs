@@ -10,22 +10,19 @@ public class SoundService : MonoBehaviour
     
     private void Start()
     {
-        PlayMusic(Sounds.BGMusic);
+        PlayMusic();
     }
-    public void PlayMusic(Sounds sound)
+    public void PlayMusic()
     {
         if (IsMute)
         {
             soundMusic.Stop();
             return;
-        }
-        AudioClip clip = GetSoundClip(sound);
-        if (clip != null)
+        }        
+        else if(soundMusic != null)
         {
-            soundMusic.clip = clip;
             soundMusic.Play();
         }
-        else
         {
             Debug.Log("Audio Not Assigned");
         }
@@ -55,6 +52,11 @@ public class SoundService : MonoBehaviour
             return null;
         }
     }
+    public void ToggleMute() 
+    {   IsMute = !IsMute;
+        if (IsMute) {GameService.Instance.PopUpService.ShowPopupMessage("Muted"); }
+        else { GameService.Instance.PopUpService.ShowPopupMessage("Un-Muted"); }
+    }
 }
 [Serializable]
 public class SoundType
@@ -63,7 +65,6 @@ public class SoundType
     public AudioClip soundclip;
 }
 public enum Sounds
-{
-    BGMusic,
+{   
     ButtonClick    
 }
