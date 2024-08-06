@@ -16,7 +16,7 @@ public class LevelEndScript : MonoBehaviour
     {
         AssingButtons();
     }
-    public void OnLevelOver()=>levelOverObject.SetActive(true);                       
+    public void EnableLevelOverMenu(bool status)=>levelOverObject.SetActive(status);                       
     public void SetLevelEndText(string text) => levelEndText.text = text;
     private void AssingButtons()
     {
@@ -25,12 +25,12 @@ public class LevelEndScript : MonoBehaviour
     }
     private void OnRestartClick()
     {
-        levelOverObject.SetActive(false);
+        EnableLevelOverMenu(false);
         GameService.Instance.EnableLevel(true);
     }
     private void OnMenuClicked()
     {
-        levelOverObject.SetActive(false);
+        EnableLevelOverMenu(false);
         GameService.Instance.GetMenuUiScript().EnableMenu(true);
     }
 }

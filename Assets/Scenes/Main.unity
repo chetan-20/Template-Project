@@ -2151,6 +2151,7 @@ MonoBehaviour:
   soundService: {fileID: 765105979}
   popUpService: {fileID: 1263998798}
   menuUiScript: {fileID: 9722580}
+  levelEndScript: {fileID: 15155004}
 --- !u!4 &1024258163
 Transform:
   m_ObjectHideFlags: 0

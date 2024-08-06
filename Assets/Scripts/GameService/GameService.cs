@@ -7,6 +7,7 @@ public class GameService : MonoBehaviour
     [SerializeField] private SoundService soundService;
     [SerializeField] private PopUpService popUpService;
     [SerializeField] private MenuUiScript menuUiScript;
+    [SerializeField] private LevelEndScript levelEndScript;
     private static GameService instance;    
     public static GameService Instance {  get { return instance; } }
     private void Awake()
@@ -28,5 +29,6 @@ public class GameService : MonoBehaviour
     public SoundService GetSoundService() => soundService;
     public PopUpService GetPopUpService() => popUpService;
     public MenuUiScript GetMenuUiScript() => menuUiScript;
+    public LevelEndScript GetLevelEndScript() => levelEndScript;
     public void EnableLevel(bool status) => levelObject.SetActive(status);
 }
